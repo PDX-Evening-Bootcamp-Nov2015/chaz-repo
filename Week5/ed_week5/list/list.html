@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="list.css">
+
+    <meta charset="utf-8">
+    <title>Lists </title>
+  </head>
+  <body>
+    <ul id="todo_list">
+      <li class=default> Item 1 </li>
+      <li class=default> Item 2 </li>
+      <li id="test_changing_me" class=default> XXX CHANGE ME </li>
+    </ul>
+
+    <form>
+      <input type="text" id="new_list_text" />
+      <button onclick="hello(event);" id="add_item">
+        Add item
+      </button>
+      <button onclick="goodbye(event);" id="remove_top_item">
+        Remove Top Item
+      </button>
+    </form>
+    <script src="list.js">
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.wrapper1 {
+    width: 500px;
+    margin: 0 auto;
+
+}
+
+p.one {
+    border: 1px solid red;
+    background-color: yellow;
+    padding-top: 25px;
+    margin: 20px;
+    max-width: 500px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+}
+
+p {
+  color: navy;
+  font-size: 1em;
+}
+
+h3 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 3em;
+}

@@ -1,0 +1,17 @@
+.bround {
+  max-width: 60%;
+  display: inline-block;
+}
+
+tbody {
+  max-width: 40%;
+}
+
+tr {
+  max-width: 50%;
+}
+
+td {
+  max-width: 85px;
+  padding: 5px;
+}

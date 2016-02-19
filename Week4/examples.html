@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Welcome to Charles' javascript tastic website</title>
+
+    <!-- This is a comment, by the way -->
+</head>
+
+<body>
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+</head>
+<body>
+<h2>Padded Full-Width Table</h2>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>Adam</td>
+    <td>Johnson</td>
+    <td>67</td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+<h1>My first JS webpage</h1>
+
+<h2>What is this site about?</h2>
+<p>An awesome page put together with HTML and Javascript <em>An awesome page put together with HTML and Javascript</em> An awesome page put together with HTML and Javascript</p>
+
+<h2>What this site is about</h2>
+<ul>
+    <li>To learn HTML and JS</li>
+    <li>
+        To show off
+        <ol>
+            <li>To my boss</li>
+            <li>To my friends</li>
+            <li>To my cat</li>
+            <li>To the little talking duck in my brain</li>
+        </ol>
+    </li>
+    <li>Because I have fallen in love with my computer and want to give her some HTML loving.</li>
+</ul>
+
+<h2>A Random Header</h2>
+
+<h3>Some random table</h3>
+<table>
+    <tr>
+        <td>Row 1, cell 1</td>
+        <td>Row 1, cell 2</td>
+        <td>Row 1, cell 3</td>
+    </tr>
+    <tr>
+        <td>Row 2, cell 1</td>
+        <td>Row 2, cell 2</td>
+        <td>Row 2, cell 3</td>
+    </tr>
+    <tr>
+        <td>Row 3, cell 1</td>
+        <td>Row 3, cell 2</td>
+        <td>Row 3, cell 3</td>
+    </tr>
+    <tr>
+        <td>Row 4, cell 1</td>
+        <td>Row 4, cell 2</td>
+        <td>Row 4, cell 3</td>
+    </tr>
+</table>
+
+
+
+<script>
+function myFunction() {
+    var inpObj = document.getElementById("id1");
+    if (inpObj.checkValidity() == false) {
+        document.getElementById("demo").innerHTML = inpObj.validationMessage;
+    } else {
+        document.getElementById("demo").innerHTML = "Input OK";
+    }
+}
+</script>
+
+<p>Enter a number and click OK:</p>
+
+<input id="id1" type="number" min="100" max="300">
+<button onclick="myFunction()">OK</button>
+
+<p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+
+<p id="demo"></p>
+
+
+
+</body>
+
+</html>

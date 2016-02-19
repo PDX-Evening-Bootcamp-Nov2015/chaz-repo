@@ -1,0 +1,45 @@
+
+.bround {
+  position: relative;
+  border-radius: 1em;
+  background: url('6961094951_a35c7031a2_n.jpg') no-repeat 0 0 scroll;
+  background-size: 100% 100%;
+  height:50em;
+  width:50em;
+}
+
+.text {
+  margin-left: 2em;
+  color: #C1E4E8;
+}
+
+.body {
+  max-width: 50%;
+  background-color:#blue;
+}
+
+.credit {
+    position: absolute;
+    bottom: 0;
+    color: red;
+}
+
+.foot {
+  margin-left: 1em;
+  position: absolute;
+  bottom: 0;
+}
+
+hr.style-five
+ { border: 0; height: 0;
+   box-shadow: 0 0 10px 1px black;
+ }
+
+h1 {
+  margin-left: 1em;
+  color: #C1E4E8;
+}
+
+h2 {
+  margin: 0px;
+}

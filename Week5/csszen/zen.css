@@ -1,0 +1,104 @@
+/*
+#E23045 - Red - Header
+#F59581 - Light red - list drop shadow
+#1B4549 - Dark teal - Intro
+#7AB3B0 - Teal - Drop shadow
+#F59581 - Light orange - button drop shadow
+#FFF6E0 - Light beige - Article background - light text
+#000000 - Black - dark text
+#908673 - Grey - footer button
+#D8CFBC - Lightgrey - footer drop shadow
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+
+
+body {
+  background-color; #EEEEEE;
+  font-family: sans-serif;
+}
+.page-wrapper {
+  margin-right: 15%;
+  margin-left: 15%;
+}
+h1, h2, h3 {
+  font-family: Nova Square, cursive;
+}
+h1 {
+  color: #E23045;
+  padding-left: 0.2rem;
+}
+h2 {
+  background-color: #E23045;
+  color: #FFF6E0;
+  padding-left: 0.2rem;
+  border-radius: 0.15rem;
+}
+article {
+  box-shadow: 1rem 2rem 0.01rem #7AB3B0;
+  border-radius: 0.15rem;
+  padding: 1rem;
+}
+p {
+  font-size: 0.8rem;
+}
+
+.preamble {
+  background-color: #1B4549;
+  color: #FFF6E0;
+  margin-bottom: 3rem;
+}
+.supporting {
+  display: inline-block;
+  max-width: 65%;
+}
+.supporting article {
+  background-color: #FFF6E0;
+  border: 1px solid black;
+  margin-bottom: 0.5rem;
+}
+.supporting p {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.supporting article a {
+  text-decoration: none;
+  color: #E23045;
+}
+
+footer {
+  margin-top: 2.5rem;
+  text-align: right;
+}
+footer a {
+  text-decoration: none;
+  color: #FFF6E0;
+  background-color: #908673;
+  box-shadow: 0.5rem 0.5rem 0.01rem #D8CFBC;
+  padding: 0.2rem;
+  border-radius: 0.15rem;
+}
+
+aside {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 30%;
+}
+aside h3 {
+  display: none;
+}
+aside ul {
+  list-style: none;
+}
+aside li {
+  margin: 0.5rem;
+  background-color: #E23045;
+  box-shadow: 0.5rem 0.5rem 0.01rem #F59581;
+  padding: 0.3rem;
+  border-radius: 0.15rem;
+  text-align: center;
+}
+aside a {
+  text-decoration: none;
+  color: #FFF6E0;
+}

@@ -1,0 +1,81 @@
+@import url(http://fonts.googleapis.com/css?family=Nova+Square);
+
+body {
+  background-color; #EEEEEE;
+  font-family: Nova Square, cursive;
+  display: inline-block;
+  max-width: 90%;
+}
+
+.page-wrapper {
+  margin-left: 30px;
+}
+
+h1, h2, h3 {
+  font-family: Nova Square, cursive;
+}
+
+.intro h1 {
+  color: E23045;
+  font-family: Nova Square, cursive;
+}
+
+.intro h2 {
+  background-color: E23045;
+  font-family: Nova Square, cursive;
+  color: FFF6E0;
+}
+
+.preamble {
+  background-color: 1B4549;
+  color: FFF6E0;
+  box-shadow: 20px 20px 1px #7AB3B0;
+  margin-bottom: 50px;
+
+
+}
+
+.sidebar {
+
+  vertical-align: top;
+  max-width: 30%;
+  margin: 5px;
+  float: right;
+  margin-right: 150px;
+}
+
+
+
+.sidebar li {
+  background-color: E23045;
+
+
+  text-align: center;
+  color: white;
+  padding: 10px;
+  margin: 15px;
+  box-shadow: 10px 10px 1px #F59581;
+}
+
+.supporting {
+  padding: 10px;
+  max-width: 52%;
+  display: inline-block;
+}
+
+.explanation {
+  background-color: FFF6E0;
+  max-width: 100%;
+  display: inline-block;
+  border: 2px solid black;
+  margin-bottom: 30px;
+  box-shadow: 20px 20px 1px #7AB3B0;
+}
+
+.participation {
+  background-color: FFF6E0;
+  max-width: 100%;
+  border: 2px solid black;
+  display: inline-block;
+  box-shadow: 20px 20px 1px #7AB3B0;
+}

@@ -1,0 +1,31 @@
+
+
+.background {
+  background-color: orange;
+  color: white;
+  max-width: 75%;
+  border-radius: 6px;
+}
+
+h2 {
+  text-align: center;
+}
+
+
+
+td {
+  max-width: 130px;
+  margin-right: .5em;
+  margin-left: .5em;
+  border: .7em;
+  padding: 5px;
+  display: inline-flex;
+  border-radius: 5px;
+
+}
+
+img {
+  max-width: 75px;
+  max-height: 75px;
+  border-radius: 10px;
+}
