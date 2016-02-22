@@ -3,45 +3,93 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="angry.css"/>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <div class="w3-container">
+      <header class="w3-container w3-deep-orange">
+        <h1>Angry Dice!</h1>
+      </header>
+    </div>
   </head>
+  <div class="w3-container">
   <body>
+        <table width="80%">
+            <thead>
+                <tr>
+                  <td><button id="dice1keep">Roll Die 1</button></td>
 
-    <div class="background">
-        <main>
+                  <td><button id="dice2keep">Roll Die 2</button></td>
+                </tr>
+            </thead>
+              <div class="w3-container">
+            <tbody id="Dice">
+              <tr>
+                  <div class="w3-container">
+                <td>
+                  <img src="3.png"></img>
+                </td>
+              </div>
+                <div class="w3-container">
+                <td>
+                  <img src="3.png"></img>
+                </td>
+              </div>
+                <td>Stage:1</td>
+                <td>Number of rolls:0</td>
+              </tr>
 
-            <h2>Angry Dice</h2>
+            </tbody>
+          </div>
 
-    ​
+        </table>
 
-            <table width="100%">
+        <button id="play">Roll Both Dice</button>
+        <button id="reset">Reset Game and Roll Again</button>
 
-                <thead>
+        <div class="w3-card-4" style="width:50%">
 
-                    <tr>
-                      <td><button id="dice1keep">Roll Die 1</button></td>
+          <header class="w3-container w3-deep-orange">
+           <h1>Rules</h1>
+          </header>
 
-                          <td><button id="dice2keep">Roll Die 2</button></td>
-                    </tr>
+          <div class="w3-container">
+<p>This project allows a user to play Angry Dice in the web browser.</p>
 
-                </thead>
+<p>The browser enforces the rules of the game, progressing through the three stages for the user, and moving them back to Stage 1 when they roll double Angry faces.</p>
 
-                <tbody id="Dice">
+<p>The full rules of the game are below:</p>
 
-                </tbody>
-    <tfoot>
-      <tr>
+<p>## The Battle</p>
+<p>Players roll their dice at the **same time**, trying to get from 1 to 6 the
+fastest. The first to do so wins!</p>
 
-      </tr>
-    </tfoot>
-            </table>
+<p>## The Details</p>
+<p>Each player needs two Angry Dice. Players roll their dice, looking to complete
+Stage 1, then Stage 2, then Stage 3. When each Stage is complete, the player
+must declare it out loud.</p>
 
-            <button id="play">Roll Both Dice</button>
-            <button id="reset">Reset</button>
-</div>
-        </main>
+<p>### Stage 1</p>
+<p>One die showing 1 pip, another showing 2 pips.</p>
+
+<p>### Stage 2</p>
+<p>One die showing the Angry face (which represents a 3), another showing 4 pips.</p>
+
+<p>### Stage 3</p>
+<p>One die showing 5 pips, another showing 6 pips.</p>
+
+<p>Players do not have to perfectly roll each Stage; if a die shows one face in a
+set, that die is locked (left aside) and the player now rolls the other die
+to complete the set. EXCEPTION: The 6 die face may never be locked!</p>
+
+<p>## The Anger</p>
+<p>If the dice ever show both Angry Faces, the player must START OVER from **Stage 1**.</p>
+
+<p>## The Victory</p>
+<p>The first player to race through all Stages to reach Stage 3 and announces
+"GET ANGRY!" is declared the victor!</p>
+          </div>
+        </div>
     ​
     <script src="angry.js"></script>
-
   </body>
+</div>
 </html>
