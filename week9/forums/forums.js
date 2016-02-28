@@ -1,40 +1,50 @@
-$(document).ready(function(){
-document.getElementById("submitPost").onclick = ("click", submitPost);
-pullPosts();
+$(document).ready(function() {
+    document.getElementById('error').style.display = 'none';
+    document.getElementById("submitPost").onclick = ("click", submitPost);
+    pullPosts();
 
-function pullPosts() {
-  var url = 'https://spreadsheets.google.com/feeds/list/1_fhQCe0wAmLs0FCOUDn4HZ8eyDq6QHcvQngF7n4e96I/default/public/values?alt=json-in-script';
-  var response = $.ajax({
-      type: 'GET',
-      url: url,
-      contentType: "application/json",
-      dataType: 'jsonp',
-      success: function(result){postdata(result);},
-      error: function(result){postdata(result);}
-    });
-};
+    function pullPosts() {
+        var response = $.ajax({
+            type: 'GET',
+            url: '/projects/forums/forums_posts_get/',
+            contentType: "application/json",
+            success: function(result) {
+                postdata(result);
+            },
+            error: function(result) {
+                postdata(result);
+            }
+        });
+    };
 
-function postdata(data){
-  var posts = data.feed.entry;
-  for (i = 0;i < posts.length; i++){
-  $("#post").append( "<TR> <TD>Title</TD> <TD>" + posts[i].gsx$title.$t + "</TD> </TR>" );
-  $("#post").append( "<TR> <TD>Body</TD> <TD>" + posts[i].gsx$bodytext.$t + "</TD> </TR>" );
-  }
-}
+    function postdata(data) {
+        var posts = data['key'].reverse();
+        for (i = 0; i < posts.length; i++) {
+            document.getElementById('error').style.display = 'none';
+            $("#post").append("<li class=" + '"list-group-item">' + "<b>" + posts[i][0] + "</b>" + "<br>" + posts[i][1] + "</li>");
 
-function submitPost(event){
-event.preventDefault();
-var xtitle = document.getElementById('1').value;
-var xcontent = document.getElementById('2').value;
-var url = 'https://docs.google.com/forms/d/13VwG7osI2qVSGPTw8Dl2LICxUzAi3DwACfkTW5I1ocM/formResponse';
-$.ajax({
-  type: "POST",
-  url: url,
-  dataType: 'xml',
-  data: {"entry_1358166143": xtitle, "entry_1289920291": xcontent},
-  success: function (){pullPosts(); console.log("test")},
-  error: pullPosts
-});
-}
+        }
+    }
+
+    function submitPost(event) {
+        event.preventDefault();
+        var xtitle = document.getElementById('1').value;
+        var xcontent = document.getElementById('2').value;
+        var revisedString = xtitle + "99999" + xcontent
+        $.ajax({
+            type: 'GET',
+            url: "/projects/forums/forums_posts/" + revisedString,
+            contentType: "application/json",
+            success: function(result) {
+                $("#post").empty();
+                postdata(result)
+            },
+            error: function() {
+                pullPosts;
+                console.log("error");
+                document.getElementById('error').style.display = 'block';
+            }
+        });
+    }
 
 });

@@ -1,0 +1,49 @@
+{% extends 'port_main_app/base.html' %}
+{% load staticfiles %}
+
+{% block primary %}
+  <title>2016 Presidential Twitter Feed</title>
+  <div class="container-fluid">
+    <div class="well">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <h4>Click on a candidate to view his or her last ten tweets!</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" id="BernieSanders" src={% static 'port_main_app/projects/twitter/bernie.jpg' %} style="width:100%">
+          <center>Bernie Sanders</center>
+        </div>
+        <div class="col-sm-3">
+          <img class="img-responsive" id="HillaryClinton" src={% static 'port_main_app/projects/twitter/HRC.jpg' %} style="width:100%">
+          <center>Hillary Clinton</center>
+        </div>
+        <div class="col-sm-3">
+          <img class="img-responsive" id="realDonaldTrump" src={% static 'port_main_app/projects/twitter/trump.jpg' %} style="width:100%">
+          <center>Donald Trump</center>
+        </div>
+        <div class="col-sm-3">
+          <img class="img-responsive" id="TedCruz" src={% static 'port_main_app/projects/twitter/ted.jpg' %} style="width:100%">
+          <center>Ted Cruz</center>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="tweetContainer">
+            <div style="width:100%">
+              <header>
+                <h4 id="candidate_username"></h4>
+              </header>
+              <div id="displayTweetsInHTML"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'port_main_app/projects/twitter/twitter.js' %}"></script>
+{% endblock %}

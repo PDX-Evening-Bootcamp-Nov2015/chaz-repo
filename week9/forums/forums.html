@@ -1,28 +1,58 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-<div>
-  <table width="100%">
-      <thead><p>Awesome Forum!</p>
-        <p>Wow look at all these cool posts!.</p>
-          <tr>
-          </tr>
-      </thead>
-      <tbody id="post">
-      </tbody>
-</div>
+{% extends 'port_main_app/base.html' %}
+{% load staticfiles %}
 
-    <label for="title">Title of post</label>
-    <input id="1" type="text" name="title" required/>
-    <label for="content">Content of post</label>
-    <input id="2" type="text" name="content" required/>
-    <input type="submit" name="submit" id="submitPost" value="Submit Post" />
+{% block primary %}
 
-  </body>
-  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
-  <script src="forums.js"></script>
-</html>
+  <!DOCTYPE html>
+  <title>Message Board</title>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>Message Board</title>
+    </head>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="well">
+              <div class="row">
+                <div class="col-sm-7">
+                  <h2>Message Board</h2>
+                  <medium>Leave a message to be read by others.</medium>
+                  <br>
+                  <form role="form">
+                    <div class="form-group">
+                      <label for="title">Title</label>
+                      <input id="1" type="text" name="title" required/>
+                      <br>
+                      <label for="content">Content</label>
+                      <input id="2" type="text" name="content" required/>
+                      <input type="submit" name="submit" id="submitPost" value="Submit Post"/>
+                      <p id="error">
+                        <font class="text-danger">Please use only the following characters,
+                          <br>
+                          A-Z, a-z, 0-9, and .</font>
+                      </p>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-sm-5">
+                  <center>
+                    <img class="img-rounded" src={% static 'port_main_app/projects/forums/postit.jpg' %} style="width:100%">
+                  </center>
+                </div>
+              </div>
+
+              <h3>Most recent posts</h3>
+              <ul id="post" class="list-group"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    <script src={% static 'port_main_app/projects/forums/forums.js' %}></script>
+  </html>
+
+{% endblock %}

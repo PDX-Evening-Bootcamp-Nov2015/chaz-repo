@@ -1,0 +1,51 @@
+{% extends 'port_main_app/base.html' %}
+{% load staticfiles %}
+
+{% block primary %}
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Roll Dice</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <div class="container">
+        <header>
+          <h1>Roll Dice</h1>
+        </header>
+      </head>
+      <body>
+        <main>
+          <table width="75%">
+            <thead>
+              <p>Take a Chance and Roll the Dice!</p>
+              <p2>Enter a number between 1 and 100 and this program will display random dice.</p2>
+              <br>
+              <input type="number" id="dicenumber"/>
+              <br>
+              <button id="submit">
+                Submit</button>
+              <div id="tempPicDiv" style="width:20%">
+                <img id="tempPic" src={% static 'port_main_app/projects/rolldice/dice-300px.png' %} style="width:100%">
+              </div>
+            </thead>
+            <tbody id="Dice"></tbody>
+          </table>
+
+          <p id="tempCredit">Dice Image created by "Wsaje" @
+            <a href="https://openclipart.org/user-detail/wjase">https://openclipart.org/user-detail/wjase</a>
+          </p>
+
+        </div>
+      </main>
+      ​
+      <script>
+        var imagePath = "{% static 'port_main_app/projects/rolldice/' %}";
+      </script>
+
+      <script src={% static 'port_main_app/projects/rolldice/dice.js' %}></script>
+    </body>
+
+  </html>
+
+{% endblock %}

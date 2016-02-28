@@ -1,21 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>javapic</title>
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+{% extends 'port_main_app/base.html' %}
+{% load staticfiles %}
 
-<main>
-    <header>javapic <span class="tagline">develop something beautiful</span></header>
-    <div id="jumbotron" class="jumbotron">
-        <div>a picture is worth a 1000 words</div>
-    </div>
-    <div class="bottom_jumbo"><a href="join.html">join now</a></div>
+{% block primary %}
 
-</main>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>javapic</title>
+      <link rel="stylesheet" href="{% static 'port_main_app/projects/javapic/css/style.css' %}"/>
+    </head>
+    <body>
 
-</body>
-<script src="js/javapic.js"></script>
-</html>
+      <main>
+        <header>javapic
+          <span class="tagline">develop something beautiful</span>
+        </header>
+        <div id="jumbotron" class="jumbotron">
+          <div>a picture is worth a 1000 words</div>
+        </div>
+        <div class="bottom_jumbo">
+          <a href="/projects/javapic/join/">join now</a>
+        </div>
+
+      </main>
+
+    </body>
+    <script>
+      var imagePath = "{% static 'port_main_app/projects/javapic/images/' %}";
+    </script>
+    <script src={% static 'port_main_app/projects/javapic/js/javapic.js' %}></script>
+  </html>
+
+{% endblock %}
