@@ -26,25 +26,25 @@ class Die():
     and the roll method, and returns the die value after the roll"""
     def __init__(self, color):
         self.color = color
-
         if color == 6:
             self.sides = [["B"],["B"],["B"],["F"],["F"],["S"]]
         elif color == 4:
             self.sides = [["B"],["B"],["F"],["F"],["S"],["S"]]
         elif color == 3:
             self.sides = [["B"],["F"],["F"],["S"],["S"],["S"]]
-
         self.currentvalue = self.sides[0]
-#roll method randomly shuffles the self.sides list and returns current value
+
     def roll(self):
+        """roll method randomly shuffles the self.sides list and returns current value"""
         shuffle(self.sides)
         self.currentvalue = self.sides[0]
-#this method returns the current value of the die after the roll
+
     def __repr__(self):
         return "{}".format(self.currentvalue)
 
-#game class, with all the game properties
+
 class Game():
+    """Game class. It holds all information concerning current game state"""
     def __init__(self):
         self.playerobjectlist = []
         self.current_player = 0
@@ -58,7 +58,6 @@ class Game():
 
     def roll_dice(self):
         """Roll_dice method inside game class. it also uses shuffle."""
-
         # Figure out how many die we need
         num = 3 - len(self.current_dice)
         # Grab a new die for every die we're missing
@@ -68,31 +67,31 @@ class Game():
                 self.cup = self.brains
                 self.brains = []
                 shuffle(self.cup)
-#takes used fie from cup and adds to current_dice
+            #takes used die from cup and adds to current_dice
             self.current_dice.append(self.cup.pop())
             num -= 1
-#creates a copy of current dice
+        #creates a copy of current dice
         copy = self.current_dice[:]
-#for loop for the current dice copy, runs the die.roll function which determines
-#whether each die represents a foot, brain, or shotgun
+        #for loop for the current dice copy, runs the die.roll function which determines
+        #whether each die represents a foot, brain, or shotgun
         for die in copy:
             die.roll()
-#adjusts the brain count and brain list
+            #adjusts the brain count and brain list
             if die.currentvalue == ["B"]:
                 self.playerobjectlist[self.current_player].brainCount += 1
                 self.brains.append(die)
                 self.current_dice.remove(die)
-#adjusts the shotgun count by appending to self.shotguns. adjusts current dice count.
+            #adjusts the shotgun count by appending to self.shotguns. adjusts current dice count.
             elif die.currentvalue == ["S"]:
                 self.shotguns.append(die)
                 self.current_dice.remove(die)
-                #timer so that theres a pause between players
+        #timer so that there is a one second pause between players
         time.sleep(1)
         #give it a little space
         print("")
         #displays the current player's name
         print(str(self.playerobjectlist[self.current_player]))
-        #gives a little time
+        #half second delay to make the display of information smoother
         time.sleep(.5)
         #displays game info
         print("You have just rolled,")
@@ -102,8 +101,9 @@ class Game():
         #check game method. changes gamestate to CHANGETURN if >3 shotguns
         #or changes it to WINNERFOUND and displays winner messages if 13 brains accumulated
     def check_game(self):
+        """check_game method determine if a player's turn is over of if a winnder has been determined."""
         if len(self.shotguns) >= 3:
-            print ("You have been shot 3 times! YOUR TURN IS OVER")
+            print("You have been shot 3 times! YOUR TURN IS OVER")
             print(" ")
             self.gamestate = "CHANGETURN"
             self.playerobjectlist[self.current_player].brainCount = self.playerobjectlist[self.current_player].brainCount - len(self.brains)
@@ -112,8 +112,8 @@ class Game():
             print ("You Won!!! GAME OVER")
             print (" ")
             self.gamestate = "WINNERFOUND"
-        #ask player method. called at each round.
     def ask_player(self):
+        """ask_player method asks the player if they want to continue to roll or end their turn."""
         x = 0
         while x == 0:
             ask = input("Do you want to roll again? Y or N ")
@@ -152,8 +152,9 @@ class Game():
         else:
             print("Sorry please enter a number between 1 and 6")
             game_setup()
-        # name_setup method. Called by game_setup. displays player number and asks for player names
+
     def name_setup(self, numberofplayers):
+        """ame_setup method. Called by game_setup. displays player number and asks for player names"""
         for x in range(1, (numberofplayers + 1)):
             print ("Player number" + str(x))
             name = input("Please enter name:")
